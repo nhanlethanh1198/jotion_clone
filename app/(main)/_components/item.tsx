@@ -1,29 +1,29 @@
 "use client";
 
-import { useUser } from "@clerk/clerk-react";
-import { useMutation } from "convex/react";
-import {
-    ChevronDown,
-    ChevronRight,
-    LucideIcon,
-    MoreHorizontal,
-    Plus,
-    Trash
+import { 
+  ChevronDown, 
+  ChevronRight, 
+  LucideIcon,
+  MoreHorizontal,
+  Plus,
+  Trash
 } from "lucide-react";
+import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { useUser } from "@clerk/clerk-react";
 
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu";
-import { Skeleton } from "@/components/ui/skeleton";
-import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "@/convex/_generated/api";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator
+} from "@/components/ui/dropdown-menu";
 
 interface ItemProps {
   id?: Id<"documents">;
@@ -136,7 +136,7 @@ export const Item = ({
       </span>
       {isSearch && (
         <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-xs">Ctrl</span>K
+          <span className="text-xs">⌘</span>K
         </kbd>
       )}
       {!!id && (

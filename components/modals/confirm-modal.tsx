@@ -1,67 +1,56 @@
-'use client';
+"use client";
 
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogTitle,
-    AlertDialogTrigger
-} from '@/components/ui/alert-dialog';
-import React from 'react';
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from "@/components/ui/alert-dialog";
 
 interface ConfirmModalProps {
-
-    // title: string
-    // description: string
-    // confirmText: string
-    // cancelText: string
-
-    onConfirm: () => void
-    // onCancel: () => void
-
-    children: React.ReactNode
-}
+  children: React.ReactNode;
+  onConfirm: () => void;
+};
 
 export const ConfirmModal = ({
-    // title,
-    // description,
-    // confirmText,
-    // cancelText,
-    onConfirm,
-    // onCancel,
-    children
+  children,
+  onConfirm
 }: ConfirmModalProps) => {
-    const handleConfirm = (
-        event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-    ) => {
-        event.stopPropagation()
-        onConfirm()
-    }
+  const handleConfirm = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+    onConfirm();
+  };
 
-    return (
-        <AlertDialog>
-            <AlertDialogTrigger onClick={(event) => event.stopPropagation()} asChild>
-                {children}
-            </AlertDialogTrigger>
-            <AlertDialogContent>
-                <AlertDialogTitle>
-                    Are you sure?
-                </AlertDialogTitle>
-                <AlertDialogDescription>
-                    This action cannot be undone.
-                </AlertDialogDescription>
-                <AlertDialogFooter>
-                    <AlertDialogCancel onClick={e => e.stopPropagation()}>
-                        Cancel
-                    </AlertDialogCancel>
-                    <AlertDialogAction onClick={handleConfirm}>
-                        Confirm
-                    </AlertDialogAction>
-                </AlertDialogFooter>
-            </AlertDialogContent>
-        </AlertDialog>
-    )
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger onClick={(e) => e.stopPropagation()} asChild>
+        {children}
+      </AlertDialogTrigger>
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>
+            Are you absolutely sure?
+          </AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel onClick={e => e.stopPropagation()}>
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction onClick={handleConfirm}>
+            Confirm
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  )
 }

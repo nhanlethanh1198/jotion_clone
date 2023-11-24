@@ -88,9 +88,7 @@ export const Navigation = () => {
   const handleMouseUp = () => {
     isResizingRef.current = false;
     document.removeEventListener("mousemove", handleMouseMove);
-    
-document.removeEventListener("mouseup", handleMouseUp);
-
+    document.removeEventListener("mouseup", handleMouseUp);
   };
 
   const resetWidth = () => {
