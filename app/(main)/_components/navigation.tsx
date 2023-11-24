@@ -15,8 +15,10 @@ import { Popover, PopoverContent } from "@/components/ui/popover";
 import { PopoverTrigger } from "@radix-ui/react-popover";
 import { TrashBox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
+import { useSetting } from "@/hooks/use-setting";
 
 export const Navigation = () => {
+    const setting = useSetting()
     const search = useSearch()
     const pathname = usePathname();
     const isMobile = useMediaQuery('(max-width: 768px)');
@@ -153,7 +155,7 @@ export const Navigation = () => {
                     <Item
                         label="Settings"
                         icon={Settings}
-                        onClick={() => { }}
+                        onClick={setting.onOpen}
                     />
                     <Item
                         onClick={handleCreate}
