@@ -6,7 +6,7 @@ type SettingStore = {
     onOpen: () => void
 }
 
-export const useSetting = create<SettingStore>((set) => ({
+export const useSettings = create<SettingStore>((set) => ({
     isOpen: false,
     onClose: () => set({ isOpen: false }),
     onOpen: () => set({ isOpen: true })

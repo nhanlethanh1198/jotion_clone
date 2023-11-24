@@ -5,12 +5,12 @@ import {
   DialogContent,
   DialogHeader
 } from "@/components/ui/dialog";
-import { useSetting } from "@/hooks/use-setting";
+import { useSettings } from "@/hooks/use-settings";
 import { Label } from "@/components/ui/label";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export const SettingsModal = () => {
-  const settings = useSetting();
+  const settings = useSettings();
 
   return (
     <Dialog open={settings.isOpen} onOpenChange={settings.onClose}>

@@ -5,6 +5,8 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { ConvexClientProvider } from '@/components/providers/convex-provider'
 import { ModalProvider } from '@/components/providers/modal-provider'
+import { EdgeStoreProvider } from "@/lib/edgestore";
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -35,17 +37,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
         <ConvexClientProvider>
-          <ThemeProvider
-            attribute='class'
-            defaultTheme='system'
-            enableSystem={true}
-            disableTransitionOnChange={true}
-            storageKey='jotion-theme-2'
-          >
-            <Toaster position='bottom-center' />
-            <ModalProvider />
-            {children}
-          </ThemeProvider>
+          <EdgeStoreProvider>
+            <ThemeProvider
+              attribute='class'
+              defaultTheme='system'
+              enableSystem={true}
+              disableTransitionOnChange={true}
+              storageKey='jotion-theme-2'
+            >
+              <Toaster position='bottom-center' />
+              <ModalProvider />
+              {children}
+            </ThemeProvider>
+          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>
