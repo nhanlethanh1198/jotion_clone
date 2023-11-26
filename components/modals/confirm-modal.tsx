@@ -36,18 +36,18 @@ export const ConfirmModal = ({
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>
-            Are you absolutely sure?
+            Bạn có chắc chắn muốn xoá vĩnh viễn tài liệu này?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone.
+            Sau khi thao tác, không thể hoàn tác lại.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={e => e.stopPropagation()}>
-            Cancel
+            Huỷ
           </AlertDialogCancel>
           <AlertDialogAction onClick={handleConfirm}>
-            Confirm
+            Xác nhận
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

@@ -8,10 +8,10 @@ export const Footer = () => {
       <Logo />
       <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
         <Button variant="ghost" size="sm">
-          Privacy Policy
+          Chính sách bảo mật (chưa có gì đâu, đừng click vào!)
         </Button>
         <Button variant="ghost" size="sm">
-          Terms & Conditions
+          Điều khoản và điều kiện (chưa có gì đâu, đừng click vào!)
         </Button>
       </div>
     </div>

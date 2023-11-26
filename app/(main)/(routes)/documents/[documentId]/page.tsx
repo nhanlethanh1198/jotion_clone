@@ -51,7 +51,7 @@ const DocumentIdPage = ({
   }
 
   if (document === null) {
-    return <div>Not found</div>
+    return <div>Không tìm thấy</div>
   }
 
   return ( 

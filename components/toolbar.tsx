@@ -46,7 +46,7 @@ export const Toolbar = ({
     setValue(value);
     update({
       id: initialData._id,
-      title: value || "Untitled"
+      title: value || "Tiêu đề chưa đặt tên"
     });
   };
 
@@ -105,7 +105,7 @@ export const Toolbar = ({
               size="sm"
             >
               <Smile className="h-4 w-4 mr-2" />
-              Add icon
+              Thêm Icon
             </Button>
           </IconPicker>
         )}
@@ -117,7 +117,7 @@ export const Toolbar = ({
             size="sm"
           >
             <ImageIcon className="h-4 w-4 mr-2" />
-            Add cover
+            Thêm ảnh bìa
           </Button>
         )}
       </div>
