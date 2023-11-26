@@ -41,7 +41,7 @@ export const Title = ({
     setTitle(event.target.value);
     update({
       id: initialData._id,
-      title: event.target.value || "Untitled"
+      title: event.target.value || "Title chưa đặt"
     });
   };
 

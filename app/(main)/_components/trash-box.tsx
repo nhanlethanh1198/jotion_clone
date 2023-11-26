@@ -37,9 +37,9 @@ export const TrashBox = () => {
     const promise = restore({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Restoring note...",
-      success: "Note restored!",
-      error:" Failed to restore note."
+      loading: "Đang phục hồi trang...",
+      success: "Phục hồi thành công!",
+      error: "Phục hồi thất bại!"
     });
   };
 
@@ -49,9 +49,9 @@ export const TrashBox = () => {
     const promise = remove({ id: documentId });
 
     toast.promise(promise, {
-      loading: "Deleting note...",
-      success: "Note deleted!",
-      error:" Failed to delete note."
+      loading: "Đang xoá trang...",
+      success: "Đã xoá thành công!",
+      error: "Xoá trang thất bại!"
     });
 
     if (params.documentId === documentId) {
@@ -75,12 +75,12 @@ export const TrashBox = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="h-7 px-2 focus-visible:ring-transparent bg-secondary"
-          placeholder="Filter by page title..."
+          placeholder="Tìm kiếm bằng tên tài liệu..."
         />
       </div>
       <div className="mt-2 px-1 pb-1">
         <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
-          No documents found.
+          Không có tài liệu nào nằm trong thùng rác.
         </p>
         {filteredDocuments?.map((document) => (
           <div

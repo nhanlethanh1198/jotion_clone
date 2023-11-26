@@ -64,9 +64,9 @@ export const Item = ({
       .then(() => router.push("/documents"))
 
     toast.promise(promise, {
-      loading: "Moving to trash...",
-      success: "Note moved to trash!",
-      error: "Failed to archive note."
+      loading: "Đang chuyển sang thùng rác...",
+      success: "Đã chuyển vào thùng rác!",
+      error: "Không thể chuyển vào thùng rác. Xin thử lại sau!"
     });
   };
 
@@ -82,7 +82,7 @@ export const Item = ({
   ) => {
     event.stopPropagation();
     if (!id) return;
-    const promise = create({ title: "Untitled", parentDocument: id })
+    const promise = create({ title: "Tiêu đề chưa đặt tên", parentDocument: id })
       .then((documentId) => {
         if (!expanded) {
           onExpand?.();
@@ -91,9 +91,9 @@ export const Item = ({
       });
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note."
+      loading: "Đang tạo trang mới...",
+      success: "Đã tạo thành công!",
+      error: "Tạo mới thất bại, xin hãy thử lại sau!"
     });
   };
 
@@ -161,11 +161,11 @@ export const Item = ({
             >
               <DropdownMenuItem onClick={onArchive}>
                 <Trash className="h-4 w-4 mr-2" />
-                Delete
+                Xoá
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <div className="text-xs text-muted-foreground p-2">
-                Last edited by: {user?.fullName}
+                Chỉnh sửa lần cuối bởi: {user?.fullName}
               </div>
             </DropdownMenuContent>
           </DropdownMenu>

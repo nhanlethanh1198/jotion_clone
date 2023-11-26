@@ -66,7 +66,7 @@ export const DocumentList = ({
           level === 0 && "hidden"
         )}
       >
-        No pages inside
+        Không có trang con của trang này.
       </p>
       {documents.map((document) => (
         <div key={document._id}>

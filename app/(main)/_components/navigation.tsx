@@ -122,13 +122,13 @@ export const Navigation = () => {
   }
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" })
+    const promise = create({ title: "Tiêu đề chưa đặt tên" })
       .then((documentId) => router.push(`/documents/${documentId}`))
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note."
+      loading: "Đang tạo trang mới...",
+      success: "Đã tạo thành công!",
+      error: "Tạo mới thất bại, xin hãy thử lại sau!"
     });
   };
 
@@ -155,19 +155,19 @@ export const Navigation = () => {
         <div>
           <UserItem />
           <Item
-            label="Search"
+            label="Tìm kiếm..."
             icon={Search}
             isSearch
             onClick={search.onOpen}
           />
           <Item
-            label="Settings"
+            label="Cài đặt"
             icon={Settings}
             onClick={settings.onOpen}
           />
           <Item
             onClick={handleCreate}
-            label="New page"
+            label="Tạo trang mới"
             icon={PlusCircle}
           />
         </div>
@@ -176,11 +176,11 @@ export const Navigation = () => {
           <Item
             onClick={handleCreate}
             icon={Plus}
-            label="Add a page"
+            label="Tạo trang mới"
           />
           <Popover>
             <PopoverTrigger className="w-full mt-4">
-              <Item label="Trash" icon={Trash} />
+              <Item label="Thùng rác" icon={Trash} />
             </PopoverTrigger>
             <PopoverContent
               className="p-0 w-72"

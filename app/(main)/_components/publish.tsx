@@ -40,9 +40,9 @@ export const Publish = ({
       .finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Publishing...",
-      success: "Note published",
-      error: "Failed to publish note.",
+      loading: "Đang xuất bản...",
+      success: "Xuất bản thành công!",
+      error: "Xuất bản thất bại!",
     });
   };
 
@@ -56,9 +56,9 @@ export const Publish = ({
       .finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Unpublishing...",
-      success: "Note unpublished",
-      error: "Failed to unpublish note.",
+      loading: "Đang huỷ xuất bản...",
+      success: "Huỷ xuất bản thành công.",
+      error: "Huỷ xuất bản thất bại.",
     });
   };
 
@@ -94,7 +94,7 @@ export const Publish = ({
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
               <p className="text-xs font-medium text-sky-500">
-                This note is live on web.
+                Tài liệu này đã được xuất bản!
               </p>
             </div>
             <div className="flex items-center">
@@ -121,7 +121,7 @@ export const Publish = ({
               disabled={isSubmitting}
               onClick={onUnpublish}
             >
-              Unpublish
+              Huỷ xuất bản
             </Button>
           </div>
         ) : (
@@ -130,10 +130,10 @@ export const Publish = ({
               className="h-8 w-8 text-muted-foreground mb-2"
             />
             <p className="text-sm font-medium mb-2">
-              Publish this note
+              Xuất bản tài liệu này
             </p>
             <span className="text-xs text-muted-foreground mb-4">
-              Share your work with others.
+              Chia sẻ tài liệu này với mọi người!
             </span>
             <Button
               disabled={isSubmitting}
@@ -141,7 +141,7 @@ export const Publish = ({
               className="w-full text-xs"
               size="sm"
             >
-              Publish
+              Xuất bản
             </Button>
           </div>
         )}

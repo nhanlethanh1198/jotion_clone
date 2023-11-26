@@ -55,11 +55,11 @@ export const SearchCommand = () => {
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
       <CommandInput
-        placeholder={`Search ${user?.fullName}'s Jotion...`}
+        placeholder={`Tìm tài liệu của bạn...`}
       />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Documents">
+        <CommandEmpty>Không tìm thấy tài liệu nào.</CommandEmpty>
+        <CommandGroup heading="Tài liệu của bạn">
           {documents?.map((document) => (
             <CommandItem
               key={document._id}

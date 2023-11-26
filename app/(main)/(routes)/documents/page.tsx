@@ -16,13 +16,13 @@ const DocumentsPage = () => {
   const create = useMutation(api.documents.create);
 
   const onCreate = () => {
-    const promise = create({ title: "Untitled" })
+    const promise = create({ title: "Tiêu đề chưa đặt tên" })
       .then((documentId) => router.push(`/documents/${documentId}`))
 
     toast.promise(promise, {
-      loading: "Creating a new note...",
-      success: "New note created!",
-      error: "Failed to create a new note."
+      loading: "Đang tạo trang mới...",
+      success: "Đã tạo trang mới thành công!",
+      error: "Tạo thất bại!"
     });
   };
 
@@ -43,11 +43,11 @@ const DocumentsPage = () => {
         className="hidden dark:block"
       />
       <h2 className="text-lg font-medium">
-        Welcome to {user?.firstName}&apos;s Jotion
+        Chào mừng bạn đến với không gian làm việc của {user?.firstName}
       </h2>
       <Button onClick={onCreate}>
         <PlusCircle className="h-4 w-4 mr-2" />
-        Create a note
+        Tạo note mới
       </Button>
     </div>
    );
