@@ -17,7 +17,8 @@
     "moduleResolution": "Node",
     "isolatedModules": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    "checkJs": false
   },
   "include": ["./**/*"],
   "exclude": ["./_generated"]

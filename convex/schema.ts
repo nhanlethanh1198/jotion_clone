@@ -13,5 +13,11 @@ export default defineSchema({
         isPublished: v.boolean(),
     })
         .index('by_user', ['userId'])
-        .index('by_user_parent', ['userId', 'parentDocument'])
+        .index('by_user_parent', ['userId', 'parentDocument']),
+    welcomeTrigger: defineTable({
+        userId: v.string(),
+        isTriggered: v.boolean(),
+    })
+    .index('by_user', ['userId'])
+    .index('by_user_isTriggered', ['userId', 'isTriggered']),
 })
