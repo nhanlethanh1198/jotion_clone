@@ -30,12 +30,12 @@ export const Navbar = () => {
           <>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
-                Log in
+                Đăng nhập
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
               <Button size="sm">
-                Get Nôtion free
+                Đăng ký miễn phí
               </Button>
             </SignInButton>
           </>
